@@ -10,6 +10,11 @@
     rust-flake.url = "github:juspay/rust-flake";
     rust-flake.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Include rust-overlay so we can update it as needed
+    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
+    rust-flake.inputs.rust-overlay.follows = "rust-overlay";
+
     git-hooks.url = "github:cachix/git-hooks.nix";
     git-hooks.flake = false;
   };
